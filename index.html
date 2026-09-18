@@ -1,11 +1,175 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bn">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Skirt new</title>
+    <title>Pink Purple - Premium Kurti Set</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Hind Siliguri', sans-serif; background-color: #f3f4f6; }
+        .sticky-bottom { position: fixed; bottom: 0; width: 100%; max-width: 32rem; }
+    </style>
 </head>
-<body>
-    
+<body class="max-w-lg mx-auto bg-white shadow-lg relative pb-20">
+
+    <!-- Header / Product Image -->
+    <div class="relative">
+        <span class="absolute top-4 left-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-bold">৩৫% ছাড়!</span>
+        <span class="absolute top-4 right-4 bg-teal-600 text-white px-4 py-1 font-bold text-lg rounded">৭৮০ ৳</span>
+        <!-- Placeholder Image: Replace with your actual Pink Purple product image -->
+        <img src="https://via.placeholder.com/600x600?text=Product+Image" alt="Kurti Set" class="w-full h-auto">
+    </div>
+
+    <!-- Product Features -->
+    <div class="p-5 bg-gray-50 mt-2">
+        <h2 class="text-xl font-bold text-center mb-4 border-b pb-2">আমাদের পণ্যের বৈশিষ্ট্য</h2>
+        <ul class="space-y-3 text-gray-700 text-sm">
+            <li class="flex items-start">
+                <span class="text-red-500 mr-2">✔</span> স্টাইল আর আরামের নিখুঁত সমন্বয় এই সুন্দর এমব্রয়ডারি করা পাজামা সেট।
+            </li>
+            <li class="flex items-start">
+                <span class="text-red-500 mr-2">✔</span> ফ্যাব্রিক: সুতি স্লাপ কটন কাপড় সফট ও আরামদায়ক
+            </li>
+            <li class="flex items-start">
+                <span class="text-red-500 mr-2">✔</span> সাইজ: 40 (L), 42 (XL), 44 (XXL)
+            </li>
+            <li class="flex items-start">
+                <span class="text-red-500 mr-2">✔</span> ভালো না লাগলে ডেলিভারি চার্জ দিয়ে রিটার্ন বা এক্সচেঞ্জ সুবিধা।
+            </li>
+        </ul>
+    </div>
+
+    <!-- Countdown Timer -->
+    <div class="p-5 text-center mt-2 border-t border-b border-red-200">
+        <h3 class="text-lg font-bold mb-3">অফারটি সীমিত সময়ের জন্য!</h3>
+        <div class="flex justify-center gap-4 text-white">
+            <div class="bg-red-500 p-3 rounded-lg min-w-[60px]"><span id="hours" class="text-xl font-bold">০৫</span><br><span class="text-xs">ঘণ্টা</span></div>
+            <div class="bg-red-500 p-3 rounded-lg min-w-[60px]"><span id="minutes" class="text-xl font-bold">৩০</span><br><span class="text-xs">মিনিট</span></div>
+            <div class="bg-red-500 p-3 rounded-lg min-w-[60px]"><span id="seconds" class="text-xl font-bold">০০</span><br><span class="text-xs">সেকেন্ড</span></div>
+        </div>
+    </div>
+
+    <!-- Order Form & Selection -->
+    <div class="p-5 mt-2">
+        <h2 class="text-xl font-bold text-center mb-5">অর্ডার ফর্ম</h2>
+        
+        <form id="orderForm" class="space-y-4">
+            
+            <!-- Color Selection -->
+            <div class="mb-4">
+                <label class="block font-semibold mb-2">পছন্দের কালারটি সিলেক্ট করুন *</label>
+                <div class="space-y-2">
+                    <label class="flex items-center p-3 border rounded cursor-pointer hover:bg-gray-50">
+                        <input type="radio" name="color" value="মিষ্টি পিংক" class="w-5 h-5 text-teal-600 focus:ring-teal-500" required>
+                        <span class="ml-3 font-medium">মিষ্টি পিংক কালার - ৭৮০ ৳</span>
+                    </label>
+                    <label class="flex items-center p-3 border rounded cursor-pointer hover:bg-gray-50">
+                        <input type="radio" name="color" value="ল্যাভেন্ডার" class="w-5 h-5 text-teal-600 focus:ring-teal-500">
+                        <span class="ml-3 font-medium">ল্যাভেন্ডার কালার - ৭৮০ ৳</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Customer Details -->
+            <div>
+                <label class="block text-sm font-medium text-gray-700">নাম *</label>
+                <input type="text" placeholder="আপনার নাম লিখুন" class="mt-1 block w-full p-2 border border-gray-300 rounded-md focus:ring-teal-500 focus:border-teal-500" required>
+            </div>
+            <div>
+                <label class="block text-sm font-medium text-gray-700">ঠিকানা *</label>
+                <textarea placeholder="আপনার সম্পূর্ণ ঠিকানা লিখুন" rows="2" class="mt-1 block w-full p-2 border border-gray-300 rounded-md focus:ring-teal-500 focus:border-teal-500" required></textarea>
+            </div>
+            <div>
+                <label class="block text-sm font-medium text-gray-700">ফোন নাম্বার *</label>
+                <input type="tel" placeholder="আপনার ফোন নাম্বার লিখুন" class="mt-1 block w-full p-2 border border-gray-300 rounded-md focus:ring-teal-500 focus:border-teal-500" required>
+            </div>
+
+            <!-- Delivery Area -->
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2">ডেলিভারি এরিয়া *</label>
+                <div class="space-y-2">
+                    <label class="flex items-center p-2 border rounded cursor-pointer">
+                        <input type="radio" name="delivery" value="80" onchange="updateTotal()" class="w-4 h-4 text-teal-600" checked>
+                        <span class="ml-2 text-sm">ঢাকা সিটির ভিতরে (৮০ টাকা)</span>
+                    </label>
+                    <label class="flex items-center p-2 border rounded cursor-pointer">
+                        <input type="radio" name="delivery" value="120" onchange="updateTotal()" class="w-4 h-4 text-teal-600">
+                        <span class="ml-2 text-sm">ঢাকা সাবসিটির ভিতরে (১২০ টাকা)</span>
+                    </label>
+                    <label class="flex items-center p-2 border rounded cursor-pointer">
+                        <input type="radio" name="delivery" value="150" onchange="updateTotal()" class="w-4 h-4 text-teal-600">
+                        <span class="ml-2 text-sm">ঢাকা সিটির বাহিরে (১৫০ টাকা)</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Order Summary -->
+            <div class="bg-gray-100 p-4 rounded mt-4">
+                <h3 class="font-bold border-b pb-2 mb-2">অর্ডার সামারি</h3>
+                <div class="flex justify-between text-sm mb-1">
+                    <span>মোট মূল্য:</span>
+                    <span>৭৮০ ৳</span>
+                </div>
+                <div class="flex justify-between text-sm mb-1">
+                    <span>ডেলিভারি চার্জ:</span>
+                    <span id="deliveryCharge">৮০ ৳</span>
+                </div>
+                <div class="flex justify-between font-bold text-lg mt-2 pt-2 border-t text-teal-700">
+                    <span>সর্বমোট:</span>
+                    <span id="totalPrice">৮৬০ ৳</span>
+                </div>
+            </div>
+
+            <button type="submit" class="w-full bg-gray-300 text-gray-700 font-bold py-3 rounded mt-4 hover:bg-teal-600 hover:text-white transition cursor-pointer">
+                অর্ডার কনফার্ম করুন
+            </button>
+        </form>
+    </div>
+
+    <!-- Sticky Bottom Bar -->
+    <div class="sticky-bottom bg-white border-t flex justify-between items-center px-4 py-2 shadow-[0_-2px_10px_rgba(0,0,0,0.1)]">
+        <div class="flex flex-col">
+            <span class="font-bold">Pink Purple</span>
+            <span class="text-xs text-gray-500">Premium Fashion</span>
+        </div>
+        <a href="https://wa.me/8801700000000" target="_blank" class="bg-green-600 text-white px-4 py-2 rounded-full font-bold flex items-center gap-2">
+            WhatsApp
+        </a>
+    </div>
+
+    <!-- JavaScript for Interactivity -->
+    <script>
+        // Total Price Calculation
+        const productPrice = 780;
+        function updateTotal() {
+            const deliveryOptions = document.getElementsByName('delivery');
+            let deliveryCharge = 80;
+            
+            for (let option of deliveryOptions) {
+                if (option.checked) {
+                    deliveryCharge = parseInt(option.value);
+                    break;
+                }
+            }
+            
+            document.getElementById('deliveryCharge').innerText = deliveryCharge + ' ৳';
+            document.getElementById('totalPrice').innerText = (productPrice + deliveryCharge) + ' ৳';
+        }
+
+        // Simple Countdown Timer (5 Hours)
+        let time = 5 * 3600 + 30 * 60; // 5 hours 30 mins
+        setInterval(() => {
+            let h = Math.floor(time / 3600);
+            let m = Math.floor((time % 3600) / 60);
+            let s = time % 60;
+
+            document.getElementById('hours').innerText = h.toString().padStart(2, '0');
+            document.getElementById('minutes').innerText = m.toString().padStart(2, '0');
+            document.getElementById('seconds').innerText = s.toString().padStart(2, '0');
+            
+            if(time > 0) time--;
+        }, 1000);
+    </script>
 </body>
 </html>
