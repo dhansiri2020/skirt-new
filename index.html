@@ -140,36 +140,64 @@
 
     <!-- JavaScript for Interactivity -->
     <script>
-        // Total Price Calculation
+        // Update Price
         const productPrice = 780;
         function updateTotal() {
-            const deliveryOptions = document.getElementsByName('delivery');
+            const deliveryOptions = document.getElementsByName('DeliveryArea');
             let deliveryCharge = 80;
             
             for (let option of deliveryOptions) {
                 if (option.checked) {
-                    deliveryCharge = parseInt(option.value);
+                    deliveryCharge = parseInt(option.getAttribute('data-charge'));
                     break;
                 }
             }
             
             document.getElementById('deliveryCharge').innerText = deliveryCharge + ' ৳';
-            document.getElementById('totalPrice').innerText = (productPrice + deliveryCharge) + ' ৳';
+            let total = productPrice + deliveryCharge;
+            document.getElementById('totalPrice').innerText = total + ' ৳';
         }
 
-        // Simple Countdown Timer (5 Hours)
-        let time = 5 * 3600 + 30 * 60; // 5 hours 30 mins
-        setInterval(() => {
-            let h = Math.floor(time / 3600);
-            let m = Math.floor((time % 3600) / 60);
-            let s = time % 60;
+        // Send Data to WhatsApp
+        const form = document.getElementById('orderForm');
 
-            document.getElementById('hours').innerText = h.toString().padStart(2, '0');
-            document.getElementById('minutes').innerText = m.toString().padStart(2, '0');
-            document.getElementById('seconds').innerText = s.toString().padStart(2, '0');
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+
+            // আপনার হোয়াটসঅ্যাপ নাম্বারটি এখানে দিন (Country code 880 সহ)
+            const whatsappNumber = "8801781902575"; 
+
+            // ফর্মের ডেটা সংগ্রহ করা
+            const name = document.querySelector('input[name="Name"]').value;
+            const address = document.querySelector('textarea[name="Address"]').value;
+            const phone = document.querySelector('input[name="Phone"]').value;
             
-            if(time > 0) time--;
-        }, 1000);
+            let color = "";
+            document.getElementsByName('Color').forEach(radio => {
+                if(radio.checked) color = radio.value;
+            });
+
+            let deliveryArea = "";
+            document.getElementsByName('DeliveryArea').forEach(radio => {
+                if(radio.checked) deliveryArea = radio.value;
+            });
+
+            const totalPrice = document.getElementById('totalPrice').innerText;
+
+            // হোয়াটসঅ্যাপ মেসেজ ফরম্যাট করা
+            const message = `*নতুন অর্ডার এসেছে!* 🛍️\n\n` +
+                            `*নাম:* ${name}\n` +
+                            `*ফোন:* ${phone}\n` +
+                            `*ঠিকানা:* ${address}\n\n` +
+                            `*প্রোডাক্ট কালার:* ${color}\n` +
+                            `*ডেলিভারি এরিয়া:* ${deliveryArea}\n` +
+                            `*সর্বমোট বিল:* ${totalPrice}\n\n` +
+                            `অনুগ্রহ করে অর্ডারটি কনফার্ম করুন।`;
+
+            // WhatsApp লিংকে রিডাইরেক্ট করা
+            const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+            window.open(whatsappURL, '_blank');
+        });
     </script>
 </body>
 </html>
