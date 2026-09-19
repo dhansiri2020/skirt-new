@@ -46,8 +46,12 @@
     <div class="p-5 mt-2">
         <h2 class="text-xl font-bold text-center mb-5">অর্ডার ফর্ম</h2>
         
-        <form id="orderForm" class="space-y-4">
+        <!-- Netlify Form Setup: added name, method, and data-netlify="true" -->
+        <form name="Pink_Purple_Orders" method="POST" data-netlify="true" class="space-y-4">
             
+            <!-- Hidden input to send total price to Netlify -->
+            <input type="hidden" name="Total_Price" id="hiddenTotalPrice" value="860 ৳">
+
             <!-- Color Selection -->
             <div class="mb-4">
                 <label class="block font-semibold mb-2">পছন্দের কালারটি সিলেক্ট করুন *</label>
@@ -63,18 +67,18 @@
                 </div>
             </div>
 
-            <!-- Customer Details (Fixed) -->
+            <!-- Customer Details -->
             <div>
                 <label class="block text-sm font-medium text-gray-700">নাম *</label>
-                <input type="text" name="Name" placeholder="আপনার নাম লিখুন" class="mt-1 block w-full p-2 border border-gray-300 rounded-md focus:ring-teal-500 focus:border-teal-500" required>
+                <input type="text" name="Customer_Name" placeholder="আপনার নাম লিখুন" class="mt-1 block w-full p-2 border border-gray-300 rounded-md focus:ring-teal-500 focus:border-teal-500" required>
             </div>
             <div>
                 <label class="block text-sm font-medium text-gray-700">ঠিকানা *</label>
-                <textarea name="Address" placeholder="আপনার সম্পূর্ণ ঠিকানা লিখুন" rows="2" class="mt-1 block w-full p-2 border border-gray-300 rounded-md focus:ring-teal-500 focus:border-teal-500" required></textarea>
+                <textarea name="Customer_Address" placeholder="আপনার সম্পূর্ণ ঠিকানা লিখুন" rows="2" class="mt-1 block w-full p-2 border border-gray-300 rounded-md focus:ring-teal-500 focus:border-teal-500" required></textarea>
             </div>
             <div>
                 <label class="block text-sm font-medium text-gray-700">ফোন নাম্বার *</label>
-                <input type="tel" name="Phone" placeholder="আপনার ফোন নাম্বার লিখুন" class="mt-1 block w-full p-2 border border-gray-300 rounded-md focus:ring-teal-500 focus:border-teal-500" required>
+                <input type="tel" name="Customer_Phone" placeholder="আপনার ফোন নাম্বার লিখুন" class="mt-1 block w-full p-2 border border-gray-300 rounded-md focus:ring-teal-500 focus:border-teal-500" required>
             </div>
 
             <!-- Delivery Area -->
@@ -82,15 +86,15 @@
                 <label class="block text-sm font-medium text-gray-700 mb-2">ডেলিভারি এরিয়া *</label>
                 <div class="space-y-2">
                     <label class="flex items-center p-2 border rounded cursor-pointer">
-                        <input type="radio" name="DeliveryArea" value="ঢাকা সিটির ভিতরে (৮০ টাকা)" data-charge="80" onchange="updateTotal()" class="w-4 h-4 text-teal-600" checked>
+                        <input type="radio" name="Delivery_Area" value="ঢাকা সিটির ভিতরে (৮০ টাকা)" data-charge="80" onchange="updateTotal()" class="w-4 h-4 text-teal-600" checked>
                         <span class="ml-2 text-sm">ঢাকা সিটির ভিতরে (৮০ টাকা)</span>
                     </label>
                     <label class="flex items-center p-2 border rounded cursor-pointer">
-                        <input type="radio" name="DeliveryArea" value="ঢাকা সাবসিটির ভিতরে (১২০ টাকা)" data-charge="120" onchange="updateTotal()" class="w-4 h-4 text-teal-600">
+                        <input type="radio" name="Delivery_Area" value="ঢাকা সাবসিটির ভিতরে (১২০ টাকা)" data-charge="120" onchange="updateTotal()" class="w-4 h-4 text-teal-600">
                         <span class="ml-2 text-sm">ঢাকা সাবসিটির ভিতরে (১২০ টাকা)</span>
                     </label>
                     <label class="flex items-center p-2 border rounded cursor-pointer">
-                        <input type="radio" name="DeliveryArea" value="ঢাকা সিটির বাহিরে (১৫০ টাকা)" data-charge="150" onchange="updateTotal()" class="w-4 h-4 text-teal-600">
+                        <input type="radio" name="Delivery_Area" value="ঢাকা সিটির বাহিরে (১৫০ টাকা)" data-charge="150" onchange="updateTotal()" class="w-4 h-4 text-teal-600">
                         <span class="ml-2 text-sm">ঢাকা সিটির বাহিরে (১৫০ টাকা)</span>
                     </label>
                 </div>
@@ -132,10 +136,10 @@
 
     <!-- JavaScript for Interactivity -->
     <script>
-        // Total Price Calculation
+        // Update Price Calculation
         const productPrice = 780;
         function updateTotal() {
-            const deliveryOptions = document.getElementsByName('DeliveryArea');
+            const deliveryOptions = document.getElementsByName('Delivery_Area');
             let deliveryCharge = 80;
             
             for (let option of deliveryOptions) {
@@ -148,6 +152,9 @@
             document.getElementById('deliveryCharge').innerText = deliveryCharge + ' ৳';
             let total = productPrice + deliveryCharge;
             document.getElementById('totalPrice').innerText = total + ' ৳';
+            
+            // Update hidden input for Netlify Form submission
+            document.getElementById('hiddenTotalPrice').value = total + ' ৳';
         }
 
         // Simple Countdown Timer 
@@ -161,44 +168,6 @@
             document.getElementById('seconds').innerText = s.toString().padStart(2, '0');
             if(time > 0) time--;
         }, 1000);
-
-        // Send Data to WhatsApp (Fixed Issue)
-        const form = document.getElementById('orderForm');
-
-        form.addEventListener('submit', e => {
-            e.preventDefault();
-
-            const whatsappNumber = "8801781902575"; 
-
-            const name = document.querySelector('input[name="Name"]').value;
-            const address = document.querySelector('textarea[name="Address"]').value;
-            const phone = document.querySelector('input[name="Phone"]').value;
-            
-            let color = "";
-            document.getElementsByName('Color').forEach(radio => {
-                if(radio.checked) color = radio.value;
-            });
-
-            let deliveryArea = "";
-            document.getElementsByName('DeliveryArea').forEach(radio => {
-                if(radio.checked) deliveryArea = radio.value;
-            });
-
-            const totalPrice = document.getElementById('totalPrice').innerText;
-
-            const message = `*নতুন অর্ডার এসেছে!* 🛍️\n\n` +
-                            `*নাম:* ${name}\n` +
-                            `*ফোন:* ${phone}\n` +
-                            `*ঠিকানা:* ${address}\n\n` +
-                            `*প্রোডাক্ট কালার:* ${color}\n` +
-                            `*ডেলিভারি এরিয়া:* ${deliveryArea}\n` +
-                            `*সর্বমোট বিল:* ${totalPrice}\n\n` +
-                            `অনুগ্রহ করে অর্ডারটি কনফার্ম করুন।`;
-
-            // Redirects in the same window to prevent mobile pop-up blockers
-            const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
-            window.location.href = whatsappURL;
-        });
     </script>
 </body>
 </html>
