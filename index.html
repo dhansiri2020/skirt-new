@@ -15,9 +15,9 @@
 
     <!-- Header / Product Image -->
     <div class="relative">
-        <span class="absolute top-4 left-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-bold">৩৫% ছাড়!</span>
+        <span class="absolute top-4 left-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-bold">৩৫% ছাড়!</span>
         <span class="absolute top-4 right-4 bg-teal-600 text-white px-4 py-1 font-bold text-lg rounded">৭৮০ ৳</span>
-        <!-- Placeholder Image: Replace with your actual Pink Purple product image -->
+        <!-- Product Image -->
         <img src="image/pic-1.jpeg" alt="Kurti Set" class="w-full h-auto">
     </div>
 
@@ -25,24 +25,16 @@
     <div class="p-5 bg-gray-50 mt-2">
         <h2 class="text-xl font-bold text-center mb-4 border-b pb-2">আমাদের পণ্যের বৈশিষ্ট্য</h2>
         <ul class="space-y-3 text-gray-700 text-sm">
-            <li class="flex items-start">
-                <span class="text-red-500 mr-2">✔</span> স্টাইল আর আরামের নিখুঁত সমন্বয় এই সুন্দর এমব্রয়ডারি করা পাজামা সেট।
-            </li>
-            <li class="flex items-start">
-                <span class="text-red-500 mr-2">✔</span> ফ্যাব্রিক: সুতি স্লাপ কটন কাপড় সফট ও আরামদায়ক
-            </li>
-            <li class="flex items-start">
-                <span class="text-red-500 mr-2">✔</span> সাইজ: 40 (L), 42 (XL), 44 (XXL)
-            </li>
-            <li class="flex items-start">
-                <span class="text-red-500 mr-2">✔</span> ভালো না লাগলে ডেলিভারি চার্জ দিয়ে রিটার্ন বা এক্সচেঞ্জ সুবিধা।
-            </li>
+            <li class="flex items-start"><span class="text-red-500 mr-2">✔</span> স্টাইল আর আরামের নিখুঁত সমন্বয় এই সুন্দর এমব্রয়ডারি করা পাজামা সেট।</li>
+            <li class="flex items-start"><span class="text-red-500 mr-2">✔</span> ফ্যাব্রিক: সুতি স্লাপ কটন কাপড় সফট ও আরামদায়ক</li>
+            <li class="flex items-start"><span class="text-red-500 mr-2">✔</span> সাইজ: 40 (L), 42 (XL), 44 (XXL)</li>
+            <li class="flex items-start"><span class="text-red-500 mr-2">✔</span> ভালো না লাগলে ডেলিভারি চার্জ দিয়ে রিটার্ন বা এক্সচেঞ্জ সুবিধা।</li>
         </ul>
     </div>
 
     <!-- Countdown Timer -->
     <div class="p-5 text-center mt-2 border-t border-b border-red-200">
-        <h3 class="text-lg font-bold mb-3">অফারটি সীমিত সময়ের জন্য!</h3>
+        <h3 class="text-lg font-bold mb-3">অফারটি সীমিত সময়ের জন্য!</h3>
         <div class="flex justify-center gap-4 text-white">
             <div class="bg-red-500 p-3 rounded-lg min-w-[60px]"><span id="hours" class="text-xl font-bold">০৫</span><br><span class="text-xs">ঘণ্টা</span></div>
             <div class="bg-red-500 p-3 rounded-lg min-w-[60px]"><span id="minutes" class="text-xl font-bold">৩০</span><br><span class="text-xs">মিনিট</span></div>
@@ -61,44 +53,44 @@
                 <label class="block font-semibold mb-2">পছন্দের কালারটি সিলেক্ট করুন *</label>
                 <div class="space-y-2">
                     <label class="flex items-center p-3 border rounded cursor-pointer hover:bg-gray-50">
-                        <input type="radio" name="color" value="মিষ্টি পিংক" class="w-5 h-5 text-teal-600 focus:ring-teal-500" required>
+                        <input type="radio" name="Color" value="মিষ্টি পিংক" class="w-5 h-5 text-teal-600 focus:ring-teal-500" required>
                         <span class="ml-3 font-medium">মিষ্টি পিংক কালার - ৭৮০ ৳</span>
                     </label>
                     <label class="flex items-center p-3 border rounded cursor-pointer hover:bg-gray-50">
-                        <input type="radio" name="color" value="ল্যাভেন্ডার" class="w-5 h-5 text-teal-600 focus:ring-teal-500">
+                        <input type="radio" name="Color" value="ল্যাভেন্ডার" class="w-5 h-5 text-teal-600 focus:ring-teal-500">
                         <span class="ml-3 font-medium">ল্যাভেন্ডার কালার - ৭৮০ ৳</span>
                     </label>
                 </div>
             </div>
 
-            <!-- Customer Details -->
+            <!-- Customer Details (Fixed) -->
             <div>
                 <label class="block text-sm font-medium text-gray-700">নাম *</label>
-                <input type="text" placeholder="আপনার নাম লিখুন" class="mt-1 block w-full p-2 border border-gray-300 rounded-md focus:ring-teal-500 focus:border-teal-500" required>
+                <input type="text" name="Name" placeholder="আপনার নাম লিখুন" class="mt-1 block w-full p-2 border border-gray-300 rounded-md focus:ring-teal-500 focus:border-teal-500" required>
             </div>
             <div>
                 <label class="block text-sm font-medium text-gray-700">ঠিকানা *</label>
-                <textarea placeholder="আপনার সম্পূর্ণ ঠিকানা লিখুন" rows="2" class="mt-1 block w-full p-2 border border-gray-300 rounded-md focus:ring-teal-500 focus:border-teal-500" required></textarea>
+                <textarea name="Address" placeholder="আপনার সম্পূর্ণ ঠিকানা লিখুন" rows="2" class="mt-1 block w-full p-2 border border-gray-300 rounded-md focus:ring-teal-500 focus:border-teal-500" required></textarea>
             </div>
             <div>
                 <label class="block text-sm font-medium text-gray-700">ফোন নাম্বার *</label>
-                <input type="tel" placeholder="আপনার ফোন নাম্বার লিখুন" class="mt-1 block w-full p-2 border border-gray-300 rounded-md focus:ring-teal-500 focus:border-teal-500" required>
+                <input type="tel" name="Phone" placeholder="আপনার ফোন নাম্বার লিখুন" class="mt-1 block w-full p-2 border border-gray-300 rounded-md focus:ring-teal-500 focus:border-teal-500" required>
             </div>
 
             <!-- Delivery Area -->
             <div>
-                <label class="block text-sm font-medium text-gray-700 mb-2">ডেলিভারি এরিয়া *</label>
+                <label class="block text-sm font-medium text-gray-700 mb-2">ডেলিভারি এরিয়া *</label>
                 <div class="space-y-2">
                     <label class="flex items-center p-2 border rounded cursor-pointer">
-                        <input type="radio" name="delivery" value="80" onchange="updateTotal()" class="w-4 h-4 text-teal-600" checked>
+                        <input type="radio" name="DeliveryArea" value="ঢাকা সিটির ভিতরে (৮০ টাকা)" data-charge="80" onchange="updateTotal()" class="w-4 h-4 text-teal-600" checked>
                         <span class="ml-2 text-sm">ঢাকা সিটির ভিতরে (৮০ টাকা)</span>
                     </label>
                     <label class="flex items-center p-2 border rounded cursor-pointer">
-                        <input type="radio" name="delivery" value="120" onchange="updateTotal()" class="w-4 h-4 text-teal-600">
+                        <input type="radio" name="DeliveryArea" value="ঢাকা সাবসিটির ভিতরে (১২০ টাকা)" data-charge="120" onchange="updateTotal()" class="w-4 h-4 text-teal-600">
                         <span class="ml-2 text-sm">ঢাকা সাবসিটির ভিতরে (১২০ টাকা)</span>
                     </label>
                     <label class="flex items-center p-2 border rounded cursor-pointer">
-                        <input type="radio" name="delivery" value="150" onchange="updateTotal()" class="w-4 h-4 text-teal-600">
+                        <input type="radio" name="DeliveryArea" value="ঢাকা সিটির বাহিরে (১৫০ টাকা)" data-charge="150" onchange="updateTotal()" class="w-4 h-4 text-teal-600">
                         <span class="ml-2 text-sm">ঢাকা সিটির বাহিরে (১৫০ টাকা)</span>
                     </label>
                 </div>
@@ -121,7 +113,7 @@
                 </div>
             </div>
 
-            <button type="submit" class="w-full bg-gray-300 text-gray-700 font-bold py-3 rounded mt-4 hover:bg-teal-600 hover:text-white transition cursor-pointer">
+            <button type="submit" class="w-full bg-teal-600 text-white font-bold py-3 rounded mt-4 hover:bg-teal-700 transition cursor-pointer">
                 অর্ডার কনফার্ম করুন
             </button>
         </form>
@@ -140,7 +132,7 @@
 
     <!-- JavaScript for Interactivity -->
     <script>
-        // Update Price
+        // Total Price Calculation
         const productPrice = 780;
         function updateTotal() {
             const deliveryOptions = document.getElementsByName('DeliveryArea');
@@ -158,16 +150,26 @@
             document.getElementById('totalPrice').innerText = total + ' ৳';
         }
 
-        // Send Data to WhatsApp
+        // Simple Countdown Timer 
+        let time = 5 * 3600 + 30 * 60; 
+        setInterval(() => {
+            let h = Math.floor(time / 3600);
+            let m = Math.floor((time % 3600) / 60);
+            let s = time % 60;
+            document.getElementById('hours').innerText = h.toString().padStart(2, '0');
+            document.getElementById('minutes').innerText = m.toString().padStart(2, '0');
+            document.getElementById('seconds').innerText = s.toString().padStart(2, '0');
+            if(time > 0) time--;
+        }, 1000);
+
+        // Send Data to WhatsApp (Fixed Issue)
         const form = document.getElementById('orderForm');
 
         form.addEventListener('submit', e => {
             e.preventDefault();
 
-            // আপনার হোয়াটসঅ্যাপ নাম্বারটি এখানে দিন (Country code 880 সহ)
             const whatsappNumber = "8801781902575"; 
 
-            // ফর্মের ডেটা সংগ্রহ করা
             const name = document.querySelector('input[name="Name"]').value;
             const address = document.querySelector('textarea[name="Address"]').value;
             const phone = document.querySelector('input[name="Phone"]').value;
@@ -184,19 +186,18 @@
 
             const totalPrice = document.getElementById('totalPrice').innerText;
 
-            // হোয়াটসঅ্যাপ মেসেজ ফরম্যাট করা
             const message = `*নতুন অর্ডার এসেছে!* 🛍️\n\n` +
                             `*নাম:* ${name}\n` +
                             `*ফোন:* ${phone}\n` +
                             `*ঠিকানা:* ${address}\n\n` +
                             `*প্রোডাক্ট কালার:* ${color}\n` +
-                            `*ডেলিভারি এরিয়া:* ${deliveryArea}\n` +
+                            `*ডেলিভারি এরিয়া:* ${deliveryArea}\n` +
                             `*সর্বমোট বিল:* ${totalPrice}\n\n` +
                             `অনুগ্রহ করে অর্ডারটি কনফার্ম করুন।`;
 
-            // WhatsApp লিংকে রিডাইরেক্ট করা
+            // Redirects in the same window to prevent mobile pop-up blockers
             const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
-            window.open(whatsappURL, '_blank');
+            window.location.href = whatsappURL;
         });
     </script>
 </body>
